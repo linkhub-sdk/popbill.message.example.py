@@ -1,5 +1,5 @@
 ####
-popbill.statement.example.py
+popbill.message.example.py
 ####
 
 팝빌 API Example for Python.
