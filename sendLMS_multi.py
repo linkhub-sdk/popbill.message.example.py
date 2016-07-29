@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# code for console Encoding difference. Dont' mind on it 
+# code for console Encoding difference. Dont' mind on it
 import sys
 import imp
 imp.reload(sys)
@@ -16,13 +16,23 @@ messageService.IsTest = testValue.IsTest
 try:
     print("장문메시지(LMS) 다량(최대1000건) 전송")
 
-    Sender = "07075103710" # 발신번호(동보전송용)
-    Subject = "동보전송용 메시지 제목" # 장문 메시지 제목(동보전송용)
-    Contents = "동보전송용 메시지 내용" # 장문 메시지 내용, 2000Byte 초과시 길이가 조정되어 전송됨.
-    reserveDT = "" # 예약전송시간, 공백 처리시 즉시전송(작성형태 yyyyMMddHHmmss)
+    # 발신번호(동보전송용)
+    Sender = "07075103710"
 
-    messages = [] # 개별 전송정보 배열 (최대 1000건)
+    # 장문 메시지 제목(동보전송용)
+    Subject = "동보전송용 메시지 제목"
 
+    # 장문 메시지 내용, 2000Byte 초과시 길이가 조정되어 전송됨.
+    Contents = "동보전송용 메시지 내용"
+
+    # 예약전송시간, 공백 처리시 즉시전송(작성형태 yyyyMMddHHmmss)
+    reserveDT = ""
+
+    # 광고문자 전송여부
+    adsYN = False
+
+    # 개별 전송정보 배열 (최대 1000건)
+    messages = []
     for x in range(0, 100):
         messages.append(
                     MessageReceiver(
@@ -35,9 +45,9 @@ try:
                     )
 
 
-    receiptNum = messageService.sendLMS_multi(testValue.testCorpNum,Sender,Subject,Contents,messages,reserveDT)
+    receiptNum = messageService.sendLMS_multi(testValue.testCorpNum,Sender,Subject,Contents,messages,reserveDT,adsYN)
 
     print("receiptNum : %s" % receiptNum)
-    
+
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))
