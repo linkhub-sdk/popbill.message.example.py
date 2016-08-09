@@ -19,6 +19,9 @@ try:
     # 발신번호(동보전송용)
     Sender = "07075103710"
 
+    # 발신자명(동보전송용)
+    SenderName = "발신자명"
+
     # 장문 메시지 제목(동보전송용)
     Subject = "동보전송용 메시지 제목"
 
@@ -39,16 +42,17 @@ try:
     for x in range(0, 100):
         messages.append(
                     MessageReceiver(
-                                    snd='07075103710', # 발신번호
-                                    rcv='010111222', # 수신번호
-                                    rcvnm='수신자명'+str(x), # 수신자명
-                                    msg='멀티 문자 API TEST', # msg값이 없는 경우 동보전송용 메시지로 전송됨.
-                                    sjt='멀티 문자제목'# 장문 메시지 제목
+                                    snd = '07075103710', # 발신번호
+                                    sndnm = '발신자명', #발신자명
+                                    rcv = '010111222', # 수신번호
+                                    rcvnm = '수신자명'+str(x), # 수신자명
+                                    msg = '멀티 문자 API TEST', # msg값이 없는 경우 동보전송용 메시지로 전송됨.
+                                    sjt = '멀티 문자제목'# 장문 메시지 제목
                                    )
                     )
 
 
-    receiptNum = messageService.sendMMS_Multi(testValue.testCorpNum,Sender,Subject,Contents,messages,filePath,reserveDT,adsYN)
+    receiptNum = messageService.sendMMS_Multi(testValue.testCorpNum,Sender,SenderName,Subject,Contents,messages,filePath,reserveDT,adsYN)
 
     print("receiptNum : %s" % receiptNum)
 

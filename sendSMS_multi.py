@@ -19,6 +19,9 @@ try:
     # 발신번호(동보전송용)
     Sender = "07075103710"
 
+    # 발신자명(동보전송용)
+    SenderName = "발신자명"
+
     # 단문메시지 내용(동보전송용)
     Contents = "동보전송용 메시지 내용"
 
@@ -34,6 +37,7 @@ try:
         messages.append(
                     MessageReceiver(
                                     snd = '07075103710', # 발신번호
+                                    sndnm = '발신자명', # 발신자명
                                     rcv = '010111222', # 수신번호
                                     rcvnm = '수신자명'+str(x), # 수신자명
                                     msg = '단문 문자 API TEST' # 메시지 내용, msg값이 없는경우 동보전송 메시지로 전송됨
@@ -41,7 +45,7 @@ try:
                     )
 
 
-    receiptNum = messageService.sendSMS_multi(testValue.testCorpNum,Sender,Contents,messages,reserveDT,adsYN)
+    receiptNum = messageService.sendSMS_multi(testValue.testCorpNum,Sender,SenderName,Contents,messages,reserveDT,adsYN)
 
     print("receiptNum : %s" % receiptNum)
 

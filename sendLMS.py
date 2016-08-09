@@ -19,6 +19,9 @@ try:
     # 발신번호
     Sender = "07075103710"
 
+    # 발신자명
+    SenderName = "발신자명"
+
     # 수신번호
     ReceiverNum = "010111222"
 
@@ -37,7 +40,7 @@ try:
     #광고문자 전송여부
     adsYN = False
 
-    receiptNum = messageService.sendLMS(testValue.testCorpNum,Sender,ReceiverNum,ReceiverName,Subject,Contents,reserveDT,adsYN)
+    receiptNum = messageService.sendLMS(testValue.testCorpNum,Sender,SenderName,ReceiverNum,ReceiverName,Subject,Contents,reserveDT,adsYN)
 
     print("receiptNum : %s" % receiptNum)
 

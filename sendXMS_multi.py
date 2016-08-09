@@ -19,6 +19,9 @@ try:
     # 발신번호(동보전송용)
     Sender = "07075103710"
 
+    # 발신자명(동보전송용)
+    SenderName = "발신자명"
+
     # 메시지제목(동보전송용)
     Subject = "동보전송용 메시지 제목"
 
@@ -37,6 +40,7 @@ try:
         messages.append(
                     MessageReceiver(
                                     snd = '07075103710', # 발신번호
+                                    sndnm = '발신자명', # 발신자명
                                     rcv = '010111222', # 수신번호
                                     rcvnm = '수신자명'+str(x), # 수신자명
                                     msg = '문자 API TEST', # 90Byte를 기준으로 단/장문을 자동으로 인식하여 전송
@@ -45,7 +49,7 @@ try:
                     )
 
 
-    receiptNum = messageService.sendXMS_multi(testValue.testCorpNum,Sender,Subject,Contents,messages,reserveDT,adsYN)
+    receiptNum = messageService.sendXMS_multi(testValue.testCorpNum,Sender,SenderName,Subject,Contents,messages,reserveDT,adsYN)
 
     print("receiptNum : %s" % receiptNum)
 
