@@ -19,9 +19,6 @@ try:
     # 발신번호(동보전송용)
     Sender = "07075103710"
 
-    # 발신자명(동보전송용)
-    SenderName = "발신자명"
-
     # 장문 메시지 제목(동보전송용)
     Subject = "동보전송용 메시지 제목"
 
@@ -39,7 +36,7 @@ try:
 
     # 개별 전송정보 배열 (최대 1000건)
     messages = []
-    for x in range(0, 100):
+    for x in range(0, 40):
         messages.append(
                     MessageReceiver(
                                     snd = '07075103710', # 발신번호
@@ -52,7 +49,7 @@ try:
                     )
 
 
-    receiptNum = messageService.sendMMS_Multi(testValue.testCorpNum,Sender,SenderName,Subject,Contents,messages,filePath,reserveDT,adsYN)
+    receiptNum = messageService.sendMMS_Multi(testValue.testCorpNum,Sender,Subject,Contents,messages,filePath,reserveDT,adsYN)
 
     print("receiptNum : %s" % receiptNum)
 

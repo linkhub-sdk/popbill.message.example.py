@@ -19,9 +19,6 @@ try:
     # 발신번호
     Sender = "07075103710"
 
-    # 발신자명
-    SenderName = "발신자명"
-
     # 수신번호
     ReceiverNum = "010111222"
 
@@ -35,12 +32,12 @@ try:
     Contents = "장문메시지 단건전송 테스트"
 
     # 예약전송시간, 형태 yyyyMMddHHmmss, 공백 처리시 즉시전송
-    reserveDT = "20150326200000"
+    reserveDT = ""
 
     #광고문자 전송여부
     adsYN = False
 
-    receiptNum = messageService.sendLMS(testValue.testCorpNum,Sender,SenderName,ReceiverNum,ReceiverName,Subject,Contents,reserveDT,adsYN)
+    receiptNum = messageService.sendLMS(testValue.testCorpNum,Sender,ReceiverNum,ReceiverName,Subject,Contents,reserveDT,adsYN)
 
     print("receiptNum : %s" % receiptNum)
 

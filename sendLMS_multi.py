@@ -19,9 +19,6 @@ try:
     # 발신번호(동보전송용)
     Sender = "07075103710"
 
-    # 발신자명(동보전송용)
-    SenderName = "발신자명"
-
     # 장문 메시지 제목(동보전송용)
     Subject = "동보전송용 메시지 제목"
 
@@ -49,7 +46,7 @@ try:
                     )
 
 
-    receiptNum = messageService.sendLMS_multi(testValue.testCorpNum,Sender,SenderName,Subject,Contents,messages,reserveDT,adsYN)
+    receiptNum = messageService.sendLMS_multi(testValue.testCorpNum,Sender,Subject,Contents,messages,reserveDT,adsYN)
 
     print("receiptNum : %s" % receiptNum)
 

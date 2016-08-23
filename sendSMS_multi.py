@@ -19,9 +19,6 @@ try:
     # 발신번호(동보전송용)
     Sender = "07075103710"
 
-    # 발신자명(동보전송용)
-    SenderName = "발신자명"
-
     # 단문메시지 내용(동보전송용)
     Contents = "동보전송용 메시지 내용"
 
@@ -45,7 +42,7 @@ try:
                     )
 
 
-    receiptNum = messageService.sendSMS_multi(testValue.testCorpNum,Sender,SenderName,Contents,messages,reserveDT,adsYN)
+    receiptNum = messageService.sendSMS_multi(testValue.testCorpNum,Sender,Contents,messages,reserveDT,adsYN)
 
     print("receiptNum : %s" % receiptNum)
 
