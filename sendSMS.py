@@ -10,14 +10,17 @@ import testValue
 
 from popbill import MessageService, PopbillException
 
-messageService =  MessageService(testValue.LinkID,testValue.SecretKey)
+messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 try:
     print("단문메시지(SMS) 1건 전송")
 
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
     # 발신번호
-    Sender = "07075103710"
+    Sender = "07043042991"
 
     # 수신번호
     ReceiverNum = "010111222"
@@ -34,7 +37,8 @@ try:
     # 광고문자 전송여부
     adsYN = False
 
-    receiptNum = messageService.sendSMS(testValue.testCorpNum,Sender,ReceiverNum,ReceiverName,Contents,reserveDT,adsYN)
+    receiptNum = messageService.sendSMS(CorpNum, Sender, ReceiverNum, ReceiverName,
+        Contents, reserveDT, adsYN)
 
     print("receiptNum : %s" % receiptNum)
 

@@ -10,14 +10,17 @@ import testValue
 
 from popbill import MessageService, MessageReceiver, PopbillException
 
-messageService =  MessageService(testValue.LinkID,testValue.SecretKey)
+messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 try:
     print("단/장문 자동인식 메시지(XMS) 다량(최대1000건) 전송")
 
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
     # 발신번호(동보전송용)
-    Sender = "07075103710"
+    Sender = "07043042991"
 
     # 메시지제목(동보전송용)
     Subject = "동보전송용 메시지 제목"
@@ -35,18 +38,19 @@ try:
 
     for x in range(0, 100):
         messages.append(
-                    MessageReceiver(
-                                    snd = '07075103710', # 발신번호
-                                    sndnm = '발신자명', # 발신자명
-                                    rcv = '010111222', # 수신번호
-                                    rcvnm = '수신자명'+str(x), # 수신자명
-                                    msg = '문자 API TEST', # 90Byte를 기준으로 단/장문을 자동으로 인식하여 전송
-                                    sjt = '장문문자제목' # 장문메시지 제목
-                                   )
-                    )
+            MessageReceiver(
+                snd = '07043042991', # 발신번호
+                sndnm = '발신자명', # 발신자명
+                rcv = '010111222', # 수신번호
+                rcvnm = '수신자명'+str(x), # 수신자명
+                msg = '문자 API TEST', # 90Byte를 기준으로 단/장문을 자동으로 인식하여 전송
+                sjt = '장문문자제목' # 장문메시지 제목
+            )
+        )
 
 
-    receiptNum = messageService.sendXMS_multi(testValue.testCorpNum,Sender,Subject,Contents,messages,reserveDT,adsYN)
+    receiptNum = messageService.sendXMS_multi(CorpNum, Sender, Subject, Contents,
+        messages, reserveDT, adsYN)
 
     print("receiptNum : %s" % receiptNum)
 

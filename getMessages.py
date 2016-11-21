@@ -10,16 +10,23 @@ import testValue
 
 from popbill import MessageService, PopbillException
 
-messageService =  MessageService(testValue.LinkID,testValue.SecretKey)
+messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
+'''
+문자전송요청에 대한 전송결과를 확인합니다.
+'''
+
 try:
-    print("문자 메시지 전송결과 확인")
+    print("=" * 15 + " 문자전송 전송결과 확인 " + "=" * 15)
 
-    receiptNum = "016080910000000009" # 문자전송 요청시 반환받은 접수번호
-    resultList = messageService.getMessages(testValue.testCorpNum, receiptNum)
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
 
-    #전송결과 항목에 대한 자세한 사항은 "문자 API 연동매뉴얼 > [3.3.1. 전송내역 상태확인] 참조
+    # 문자전송 요청시 반환받은 접수번호
+    receiptNum = "016080910000000009"
+
+    resultList = messageService.getMessages(CorpNum, receiptNum)
 
     i = 1
     for f in resultList:
@@ -36,7 +43,6 @@ try:
         print("    resultDT : %s" % f.resultDT)
         print("    sendResult : %s" % f.sendResult)
         i += 1
-
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

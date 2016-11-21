@@ -10,12 +10,14 @@ import testValue
 
 from popbill import MessageService, PopbillException
 
-messageService =  MessageService(testValue.LinkID,testValue.SecretKey)
+messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 try:
     print("단/장문 자동인식 메시지 1건 전송")
-    # 단/장문 자동인식 메시지 전송의 경우 메시지 내용(Contesnts) 길이 90Byte를 기준으로하여 단/장문을 자동인식하여 전송
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
 
     # 발신번호
     Sender = "07075103710"
@@ -38,7 +40,8 @@ try:
     # 광고문자 전송여부
     adsYN = False
 
-    receiptNum = messageService.sendXMS(testValue.testCorpNum,Sender,ReceiverNum,ReceiverName,Subject,Contents,reserveDT,adsYN)
+    receiptNum = messageService.sendXMS(CorpNum, Sender, ReceiverNum, ReceiverName,
+        Subject, Contents, reserveDT, adsYN)
 
     print("receiptNum : %s" % receiptNum)
 

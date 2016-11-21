@@ -17,10 +17,10 @@ try:
     print("=" * 15 + " 문자전송 목록 조회 " + "=" * 15)
 
     # 시작일자, 표시형식(yyyyMMdd)
-    SDate = "20160601"
+    SDate = "20161001"
 
     # 종료일자, 표시형식(yyyyMMdd)
-    EDate = "20160831"
+    EDate = "20161131"
 
     # 전송상태 배열, 1-대기, 2-성공, 3-실패, 4-취소
     State = ['1','2','3','4']
@@ -43,7 +43,8 @@ try:
     #정렬방향, D-내림차순, A-오름차순
     Order = "D"
 
-    response = messageService.search(testValue.testCorpNum, SDate, EDate, State, Item, ReserveYN, SenderYN, Page, PerPage, Order, testValue.testUserID)
+    response = messageService.search(testValue.testCorpNum, SDate, EDate, State,
+            Item, ReserveYN, SenderYN, Page, PerPage, Order, testValue.testUserID)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
@@ -58,7 +59,7 @@ try:
         for key, value in info.__dict__.items():
             print("%s : %s" % (key, value))
         i += 1
-        print()
+        print
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

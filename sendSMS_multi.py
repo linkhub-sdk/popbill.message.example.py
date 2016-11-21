@@ -10,14 +10,17 @@ import testValue
 
 from popbill import MessageService, MessageReceiver, PopbillException
 
-messageService =  MessageService(testValue.LinkID,testValue.SecretKey)
+messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 try:
     print("단문메시지(SMS) 다량(최대1000건) 전송")
 
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
     # 발신번호(동보전송용)
-    Sender = "07075103710"
+    Sender = "07043042991"
 
     # 단문메시지 내용(동보전송용)
     Contents = "동보전송용 메시지 내용"
@@ -32,17 +35,18 @@ try:
     messages = []
     for x in range(0, 100):
         messages.append(
-                    MessageReceiver(
-                                    snd = '07075103710', # 발신번호
-                                    sndnm = '발신자명', # 발신자명
-                                    rcv = '010111222', # 수신번호
-                                    rcvnm = '수신자명'+str(x), # 수신자명
-                                    msg = '단문 문자 API TEST' # 메시지 내용, msg값이 없는경우 동보전송 메시지로 전송됨
-                                   )
-                    )
+            MessageReceiver(
+                snd = '07043042991', # 발신번호
+                sndnm = '발신자명', # 발신자명
+                rcv = '010111222', # 수신번호
+                rcvnm = '수신자명'+str(x), # 수신자명
+                msg = '단문 문자 API TEST' # 메시지 내용, msg값이 없는경우 동보전송 메시지로 전송됨
+               )
+            )
 
 
-    receiptNum = messageService.sendSMS_multi(testValue.testCorpNum,Sender,Contents,messages,reserveDT,adsYN)
+    receiptNum = messageService.sendSMS_multi(CorpNum, Sender, Contents, messages,
+        reserveDT, adsYN)
 
     print("receiptNum : %s" % receiptNum)
 

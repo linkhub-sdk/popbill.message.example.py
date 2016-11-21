@@ -8,15 +8,25 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import MessageService,PopbillException
+from popbill import MessageService, PopbillException
 
-messageService =  MessageService(testValue.LinkID,testValue.SecretKey)
+messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
+
+'''
+080 서비스 수신거부 목록을 확인합니다.
+'''
 
 try:
     print("=" * 15 + " 080수신거부 목록 확인 " + "=" * 15)
 
-    response = messageService.getAutoDenyList(testValue.testCorpNum, testValue.testUserID)
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    response = messageService.getAutoDenyList(CorpNum, UserID)
 
     for info in response :
         for key, value in info.__dict__.items():

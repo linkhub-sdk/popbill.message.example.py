@@ -10,17 +10,25 @@ import testValue
 
 from popbill import MessageService, PopbillException
 
-messageService =  MessageService(testValue.LinkID,testValue.SecretKey)
+messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
+'''
+문자메시지 전송단가를 확인합니다.
+'''
+
 try:
-    print("문자 전송 단가 확인")
+    print("=" * 15 + " 문자메시지 전송단가 확인 " + "=" * 15)
 
-    MsgType = "SMS" # 문자유형, SMS(단문)/LMS(장문)/MMS(포토)
+    # 팝빌회원 아이디
+    CorpNum = testValue.testCorpNum
 
-    unitCost = messageService.getUnitCost(testValue.testCorpNum, MsgType)
+    # 문자전송유형, SMS(단문) / LMS(장문) / MMS(포토)
+    MsgType = "SMS"
 
-    print("단가: %f" % unitCost)
+    unitCost = messageService.getUnitCost(CorpNum, MsgType)
+
+    print("단가: %d" % unitCost)
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

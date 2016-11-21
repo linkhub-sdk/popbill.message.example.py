@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# code for console Encoding difference. Dont' mind on it 
+# code for console Encoding difference. Dont' mind on it
 import sys
 import imp
 imp.reload(sys)
@@ -10,17 +10,29 @@ import testValue
 
 from popbill import MessageService, PopbillException
 
-messageService =  MessageService(testValue.LinkID,testValue.SecretKey)
+messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
-try:
-    print("문자 전송내역 조회 URL 확인")
-    
-    TOGO = "BOX" # 문자 전송내역 URL 지정값
+'''
+문자메시지 전송내역 팝업 URL을 반환합니다.
+- 보안정책에 따라 반환된 URL은 30초의 유효시간을 갖습니다.
+'''
 
-    url = messageService.getURL(testValue.testCorpNum,testValue.testUserID,TOGO)
+try:
+    print("=" * 15 + " 문자 전송내역 조회 URL 확인 " + "=" * 15)
+
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    # 문자 전송내역 팝업
+    TOGO = "BOX"
+
+    url = messageService.getURL(CorpNum, UserID, TOGO)
 
     print("BOX URL : " +url)
-    
+
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

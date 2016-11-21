@@ -10,17 +10,28 @@ import testValue
 
 from popbill import MessageService, PopbillException
 
-messageService =  MessageService(testValue.LinkID,testValue.SecretKey)
+messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
+
+'''
+연동회원의 문자 API 서비스 과금정보를 확인합니다.
+'''
 
 try:
     print("=" * 15 + " 과금정보 확인 " + "=" * 15)
 
-    MsgType = "SMS" # 문자유형, SMS(단문)/LMS(장문)/MMS(포토)
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
 
-    response = messageService.getChargeInfo(testValue.testCorpNum, MsgType, testValue.testUserID)
-    
-    print(" unitCost (단가) : %s" % response.unitCost)
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    # 문자유형, SMS(단문)/LMS(장문)/MMS(포토)
+    MsgType = "SMS"
+
+    response = messageService.getChargeInfo(CorpNum, MsgType, UserID)
+
+    print(" unitCost (전송단가) : %s" % response.unitCost)
     print(" chargeMethod (과금유형) : %s" % response.chargeMethod)
     print(" rateSystem (과금제도) : %s" % response.rateSystem)
 
