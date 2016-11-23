@@ -10,7 +10,7 @@ import testValue
 
 from popbill import MessageService, MessageReceiver, PopbillException
 
-messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
+messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 try:
@@ -18,7 +18,6 @@ try:
 
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
-
 
     # 발신번호(동보전송용)
     Sender = "07043042991"
@@ -51,7 +50,7 @@ try:
 
 
     receiptNum = messageService.sendLMS_multi(CorpNum, Sender, Subject, Contents,
-            messages,reserveDT,adsYN)
+        messages, reserveDT, adsYN)
 
     print("receiptNum : %s" % receiptNum)
 

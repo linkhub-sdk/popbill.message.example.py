@@ -10,7 +10,7 @@ import testValue
 
 from popbill import JoinForm, MessageService, PopbillException
 
-messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
+messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 try:
@@ -20,7 +20,7 @@ try:
     newMember = JoinForm(
 
         # 회원아이디, 최대 20자
-        ID = "testkorea1118",
+        ID = "testkorea",
 
         # 비밀번호, 최대 20자
         PWD = "this_is_password",
@@ -61,7 +61,7 @@ try:
 
     result = messageService.joinMember(newMember)
 
-    print("처리결과 : [%d] %s" % (result.code,result.message) )
+    print("처리결과 : [%d] %s" % (result.code,result.message))
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

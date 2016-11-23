@@ -10,11 +10,11 @@ import testValue
 
 from popbill import MessageService, MessageReceiver, PopbillException
 
-messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
+messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 try:
-    print("단문메시지(SMS) 다량(최대1000건) 전송")
+    print("=" * 15 + " 단문메시지(SMS) 다량(최대1000건) 전송 " + "=" * 15)
 
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
@@ -33,7 +33,7 @@ try:
 
     # 개별수신정보 배열(최대 10000건)
     messages = []
-    for x in range(0, 100):
+    for x in range(0, 10):
         messages.append(
             MessageReceiver(
                 snd = '07043042991', # 발신번호

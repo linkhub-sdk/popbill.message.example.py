@@ -21,8 +21,8 @@ SecretKey = 'SwWxqU+0TErBXy/9TVjIPEnI0VTUMMSQZtJf3Ed8q3I='
 # 연동환경 설정값, 개발용(True), 상업용(False)
 IsTest = True
 
-# 테스트 회원 사업자번호
+# 팝빌회원 사업자번호
 testCorpNum = "1234567890"
 
-# 테스트 회원 팝빌 아아디
+# 팝빌회원 팝빌 아아디
 testUserID = "testkorea"

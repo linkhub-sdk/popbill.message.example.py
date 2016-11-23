@@ -10,7 +10,7 @@ import testValue
 
 from popbill import MessageService, PopbillException
 
-messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
+messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 '''
@@ -28,7 +28,7 @@ try:
 
     unitCost = messageService.getUnitCost(CorpNum, MsgType)
 
-    print("단가: %d" % unitCost)
+    print(MsgType + " 전송단가 : %d" % unitCost)
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

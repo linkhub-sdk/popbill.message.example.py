@@ -10,7 +10,7 @@ import testValue
 
 from popbill import MessageService, PopbillException
 
-messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
+messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 '''
@@ -28,7 +28,7 @@ try:
     UserID = testValue.testUserID
 
     # LOGIN-팝빌 로그인, CHRG-포인트충전
-    TOGO = "LOGIN"
+    TOGO = "CHRG"
 
     url = messageService.getPopbillURL(CorpNum, UserID, TOGO)
 

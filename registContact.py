@@ -10,7 +10,7 @@ import testValue
 
 from popbill import ContactInfo, MessageService ,PopbillException
 
-messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
+messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 '''

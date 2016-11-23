@@ -8,18 +8,24 @@ except Exception as E: pass
 
 import testValue
 
-from popbill import MessageService,PopbillException
+from popbill import MessageService, PopbillException
 
-messageService =  MessageService(testValue.LinkID,testValue.SecretKey)
+messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 try:
     print("=" * 15 + " 문자전송 목록 조회 " + "=" * 15)
 
-    # 시작일자, 표시형식(yyyyMMdd)
+    # 팝빌회원 사업자번호
+    CorpNum = testValue.testCorpNum
+
+    # 팝빌회원 아이디
+    UserID = testValue.testUserID
+
+    # 시작일자, 날짜형식(yyyyMMdd)
     SDate = "20161001"
 
-    # 종료일자, 표시형식(yyyyMMdd)
+    # 종료일자, 날짜형식(yyyyMMdd)
     EDate = "20161131"
 
     # 전송상태 배열, 1-대기, 2-성공, 3-실패, 4-취소
@@ -43,8 +49,8 @@ try:
     #정렬방향, D-내림차순, A-오름차순
     Order = "D"
 
-    response = messageService.search(testValue.testCorpNum, SDate, EDate, State,
-            Item, ReserveYN, SenderYN, Page, PerPage, Order, testValue.testUserID)
+    response = messageService.search(CorpNum, SDate, EDate, State, Item, ReserveYN,
+        SenderYN, Page, PerPage, Order, UserID)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)

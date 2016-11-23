@@ -10,12 +10,12 @@ import testValue
 
 from popbill import MessageService, MessageReceiver, PopbillException
 
-messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
+messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 try:
-    print("멀티메시지(MMS) 다량(최대1000건) 전송")
-
+    print("=" * 15 + " 멀티메시지(MMS) 다량(최대1000건) 전송 " + "=" * 15)
+    
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 

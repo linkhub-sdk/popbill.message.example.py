@@ -10,17 +10,17 @@ import testValue
 
 from popbill import MessageService, PopbillException
 
-messageService =  MessageService(testValue.LinkID, testValue.SecretKey)
+messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 try:
-    print("단/장문 자동인식 메시지 1건 전송")
+    print("=" * 15 + " 단/장문 자동인식 메시지 1건 전송 " + "=" * 15)
 
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
     # 발신번호
-    Sender = "07075103710"
+    Sender = "07043042991"
 
     # 수신번호
     ReceiverNum = "010111222"
