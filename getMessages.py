@@ -24,25 +24,27 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 문자전송 요청시 반환받은 접수번호
-    receiptNum = "016080910000000009"
+    receiptNum = "017071300000000002"
 
     resultList = messageService.getMessages(CorpNum, receiptNum)
 
-    i = 1
-    for f in resultList:
-        print("%d:" % i)
-        print("    state : %s" % f.state)
-        print("    type : %s" % f.type)
-        print("    subject : %s" % f.subject)
-        print("    sendNum : %s" % f.sendNum)
-        print("    senderName : %s" % f.senderName)
-        print("    receiveNum : %s" % f.receiveNum)
-        print("    receiveName : %s" % f.receiveName)
-        print("    reserveDT : %s" % f.reserveDT)
-        print("    sendDT : %s" % f.sendDT)
-        print("    resultDT : %s" % f.resultDT)
-        print("    sendResult : %s" % f.sendResult)
-        i += 1
+    for index, f in enumerate(resultList):
+        print("%d:" % index)
+        print("    state (전송상태 코드) : %s" % f.state)
+        print("    result (전송결과 코드) : %s" % f.result)
+        print("    type (메시지유형) : %s" % f.type)
+        print("    subject (메시지 제목) : %s" % f.subject)
+        print("    content (메시지 내용) : %s" % f.content)
+        print("    sendNum (발신번호) : %s" % f.sendNum)
+        print("    senderName (발신자명) : %s" % f.senderName)
+        print("    receiveNum (수신번호) : %s" % f.receiveNum)
+        print("    receiveName (수신자명) : %s" % f.receiveName)
+        print("    receiptDT (접수일시) : %s" % f.receiptDT)
+        print("    reserveDT (예약일시) : %s" % f.reserveDT)
+        print("    sendDT (전송일시) : %s" % f.sendDT)
+        print("    resultDT (전송결과 수신일시) : %s" % f.resultDT)
+        print("    tranNet (전송처리 이동통신사명) : %s" % f.tranNet)
+
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code , PE.message))

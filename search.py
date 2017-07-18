@@ -23,10 +23,10 @@ try:
     UserID = testValue.testUserID
 
     # 시작일자, 날짜형식(yyyyMMdd)
-    SDate = "20161001"
+    SDate = "20170601"
 
     # 종료일자, 날짜형식(yyyyMMdd)
-    EDate = "20161131"
+    EDate = "20170801"
 
     # 전송상태 배열, 1-대기, 2-성공, 3-실패, 4-취소
     State = ['1','2','3','4']
