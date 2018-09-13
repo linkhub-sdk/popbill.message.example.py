@@ -46,7 +46,7 @@ try:
     # 예약전송시간, 형태 yyyyMMddHHmmss, 공백 처리시 즉시전송
     reserveDT = ""
 
-    # 전송할 파일경로
+    # 전송할 파일경로 (이미지 파일의 크기는 최대 300Kbyte(JPEG), 가로/세로 1500px 이하 권장)
     FilePath = 'test.jpeg'
 
     # 광고문자 전송여부

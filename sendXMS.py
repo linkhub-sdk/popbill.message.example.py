@@ -16,6 +16,10 @@ from popbill import MessageService, PopbillException
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
+"""
+메시지 내용의 길이(90byte)에 따라 SMS/LMS(단문/장문)를 자동인식하여 전송합니다.
+"""
+
 try:
     print("=" * 15 + " 단/장문 자동인식 메시지 1건 전송 " + "=" * 15)
 
