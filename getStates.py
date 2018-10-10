@@ -42,6 +42,7 @@ try:
         print("    sDT (전송일시) : %s" % f.sDT)
         print("    rDT (결과코드 수신일시) : %s" % f.rDT)
         print("    net (전송 이동통신사명) : %s" % f.net)
+        print("    srt (구 전송 결과코드) : %s" % f.srt)
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

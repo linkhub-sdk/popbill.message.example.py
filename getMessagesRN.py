@@ -47,6 +47,8 @@ try:
         print("    sendDT (전송일시) : %s" % f.sendDT)
         print("    resultDT (전송결과 수신일시) : %s" % f.resultDT)
         print("    tranNet (전송처리 이동통신사명) : %s" % f.tranNet)
+        print("    receiptNum (접수번호) : %s" % f.receiptNum)
+        print("    requestNum (요청번호) : %s" % f.requestNum)
 
 
 except PopbillException as PE:

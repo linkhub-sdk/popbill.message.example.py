@@ -22,11 +22,12 @@ try:
     # 팝빌회원 아이디
     UserID = testValue.testUserID
 
+    # 최대 검색기간 : 6개월 이내
     # 시작일자, 날짜형식(yyyyMMdd)
-    SDate = "20170601"
+    SDate = "20180901"
 
     # 종료일자, 날짜형식(yyyyMMdd)
-    EDate = "20170801"
+    EDate = "20181010"
 
     # 전송상태 배열, 1-대기, 2-성공, 3-실패, 4-취소
     State = ['1','2','3','4']
