@@ -16,6 +16,12 @@ from popbill import MessageService, MessageReceiver, PopbillException
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
+'''
+[대랑전송] MMS(포토)를 전송합니다.
+ - 메시지 내용이 2,000Byte 초과시 메시지 내용은 자동으로 제거됩니다.
+ - 이미지 파일의 크기는 최대 300Kbtye (JPEG), 가로/세로 1500px 이하 권장
+'''
+
 try:
     print("=" * 15 + " 멀티메시지(MMS) 다량(최대1000건) 전송 " + "=" * 15)
 
@@ -45,7 +51,7 @@ try:
 
     # 개별 전송정보 배열 (최대 1000건)
     messages = []
-    for x in range(0, 5):
+    for x in range(0, 1000):
         messages.append(
             MessageReceiver(
                 snd='07043042991',  # 발신번호

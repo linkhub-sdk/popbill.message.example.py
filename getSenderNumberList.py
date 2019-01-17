@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -14,7 +17,7 @@ messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 '''
-등록된 문자 발신번호 목록을 확인합니다.
+팝빌에 등록된 문자 발신번호 목록을 확인합니다.
 '''
 
 try:
@@ -34,4 +37,4 @@ try:
         i += 1
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))

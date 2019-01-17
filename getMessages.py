@@ -2,9 +2,12 @@
 # code for console Encoding difference. Dont' mind on it
 import sys
 import imp
+
 imp.reload(sys)
-try: sys.setdefaultencoding('UTF8')
-except Exception as E: pass
+try:
+    sys.setdefaultencoding('UTF8')
+except Exception as E:
+    pass
 
 import testValue
 
@@ -14,7 +17,8 @@ messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 '''
-문자전송요청에 대한 전송결과를 확인합니다.
+문자전송요청시 발급받은 접수번호(receiptNum)로 전송상태를 확인합니다.
+ - 응답항목에 대한 자세한 사항은 "[문자 API 연동매뉴얼] >  3.3.1. GetMessages (전송내역 확인)을 참조하시기 바랍니다.
 '''
 
 try:
@@ -24,7 +28,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 문자전송 요청시 반환받은 접수번호
-    receiptNum = "017071300000000002"
+    receiptNum = "018112714000000020"
 
     resultList = messageService.getMessages(CorpNum, receiptNum)
 
@@ -49,4 +53,4 @@ try:
 
 
 except PopbillException as PE:
-    print("Exception Occur : [%d] %s" % (PE.code , PE.message))
+    print("Exception Occur : [%d] %s" % (PE.code, PE.message))

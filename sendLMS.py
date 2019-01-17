@@ -16,6 +16,11 @@ from popbill import MessageService, PopbillException
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
+'''
+LMS(장문)를 전송합니다.
+- 메시지 내용이 2,000Byte 초과시 메시지 내용은 자동으로 제거됩니다.
+'''
+
 try:
     print("=" * 15 + " 장문메시지(LMS) 1건 전송 " + "=" * 15)
 

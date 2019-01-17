@@ -16,6 +16,12 @@ from popbill import MessageService, MessageReceiver, PopbillException
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
+'''
+[대량전송] SMS(단문)를 전송합니다.
+ - 메시지 내용이 90Byte 초과시 메시지 내용은 자동으로 제거됩니다.
+ - 단건/대량 전송에 대한 설명은 "[문자 API 연동매뉴얼] > 3.2.1 SendSMS(단문전송)"을 참조하시기 바랍니다.
+'''
+
 try:
     print("=" * 15 + " 단문메시지(SMS) 다량(최대1000건) 전송 " + "=" * 15)
 

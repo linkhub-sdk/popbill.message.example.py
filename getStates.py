@@ -17,7 +17,7 @@ messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 '''
-문자 전송내역 요약정보를 확인한다.
+문자 전송내역 요약정보를 확인합니다. (최대 1000건)
 '''
 
 try:
