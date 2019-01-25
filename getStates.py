@@ -26,7 +26,7 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 문자전송 요청시 반환받은 접수번호
+    # 문자전송 요청시 반환받은 접수번호 (최대 1000건)
     receiptNumList = []
     receiptNumList.append("018041717000000018")
     receiptNumList.append("018041717000000019")

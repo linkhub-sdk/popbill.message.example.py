@@ -18,7 +18,7 @@ messageService.IsTest = testValue.IsTest
 
 '''
 LMS(장문)를 전송합니다.
-- 메시지 내용이 2,000Byte 초과시 메시지 내용은 자동으로 제거됩니다.
+ - 메시지 내용이 2,000Byte 초과시 초과된 메시지 내용은 자동으로 제거됩니다.
 '''
 
 try:
@@ -31,7 +31,7 @@ try:
     UserID = testValue.testUserID
 
     # 발신번호
-    Sender = "07043042991"
+    Sender = "07043042992"
 
     # 발신자명
     SenderName = "발신자명"
@@ -45,7 +45,7 @@ try:
     # 장문 메시지 제목
     Subject = "장문 문자 제목"
 
-    # 장문 메시지 내용, 길이가 2000Byte 초과시 길이가 조정되어 전송됨.
+    # 장문 메시지 내용, 길이가 2000Byte 초과시 초과된 메시지 내용은 자동으로 제거됩니다.
     Contents = "장문메시지 단건전송 테스트"
 
     # 예약전송시간, 형태 yyyyMMddHHmmss, 공백 처리시 즉시전송
@@ -57,7 +57,7 @@ try:
     # 전송요청번호
     # 파트너가 전송 건에 대해 관리번호를 구성하여 관리하는 경우 사용.
     # 1~36자리로 구성. 영문, 숫자, 하이픈(-), 언더바(_)를 조합하여 팝빌 회원별로 중복되지 않도록 할당.
-    RequestNum = "z"
+    RequestNum = ""
 
     receiptNum = messageService.sendLMS(CorpNum, Sender, ReceiverNum, ReceiverName,
                                         Subject, Contents, reserveDT, adsYN, UserID, SenderName, RequestNum)

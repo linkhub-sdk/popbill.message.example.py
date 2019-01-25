@@ -51,6 +51,5 @@ try:
         print("    receiptNum (접수번호) : %s" % f.receiptNum)
         print("    requestNum (요청번호) : %s" % f.requestNum)
 
-
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

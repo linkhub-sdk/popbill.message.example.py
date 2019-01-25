@@ -17,7 +17,7 @@ messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 
 '''
-해당 사업자의 파트너 연동회원 가입여부를 확인합니다.
+파트너의 연동회원으로 가입된 사업자번호인지 확인합니다.
 '''
 
 try:

@@ -28,7 +28,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 예약문자전송 요청시 할당한 전송요청번호
-    requestNum = "20190117-001"
+    requestNum = "20190124-1"
 
     result = messageService.cancelReserveRN(CorpNum, requestNum)
 

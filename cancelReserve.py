@@ -28,7 +28,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 예약문자전송 접수번호
-    receiptNum = "018112714000000020"
+    receiptNum = "019012409000000011"
 
     result = messageService.cancelReserve(CorpNum, receiptNum)
 

@@ -28,7 +28,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 문자전송 요청시 반환받은 접수번호
-    receiptNum = "018112714000000020"
+    receiptNum = "019012409000000005"
 
     resultList = messageService.getMessages(CorpNum, receiptNum)
 
@@ -50,7 +50,6 @@ try:
         print("    tranNet (전송처리 이동통신사명) : %s" % f.tranNet)
         print("    receiptNum (접수번호) : %s" % f.receiptNum)
         print("    requestNum (요청번호) : %s" % f.requestNum)
-
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

@@ -32,7 +32,7 @@ try:
     UserID = testValue.testUserID
 
     # 발신번호
-    Sender = "07043042991"
+    Sender = "07043042992"
 
     # 발신자명
     SenderName = "발신자명"

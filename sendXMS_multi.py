@@ -33,7 +33,7 @@ try:
     UserID = testValue.testUserID
 
     # 발신번호(동보전송용)
-    Sender = "07043042991"
+    Sender = "07043042992"
 
     # 메시지제목(동보전송용)
     Subject = "동보전송용 메시지 제목"
@@ -47,12 +47,12 @@ try:
     # 광고문자 전송여부
     adsYN = False
 
-    messages = []  # 개별 전송정보 배열, 최대 1000건
-
+    # 개별 전송정보 배열, 최대 1000건
+    messages = []
     for x in range(0, 10):
         messages.append(
             MessageReceiver(
-                snd='07043042991',  # 발신번호
+                snd='07043042992',  # 발신번호
                 sndnm='발신자명',  # 발신자명
                 rcv='010111222',  # 수신번호
                 rcvnm='수신자명' + str(x),  # 수신자명

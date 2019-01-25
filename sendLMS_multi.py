@@ -18,7 +18,7 @@ messageService.IsTest = testValue.IsTest
 
 '''
 [대량전송] LMS(장문)를 전송합니다.
- - 메시지 내용이 2,000Byte 초과시 메시지 내용은 자동으로 제거됩니다.
+ - 메시지 내용이 2,000Byte 초과시 초과된 메시지 내용은 자동으로 제거됩니다.
  - 단건/대량 전송에 대한 설명은 "[문자 API 연동매뉴얼] > 3.2.2 SendLMS(장문전송)"을 참조하시기 바랍니다.
 '''
 
@@ -32,12 +32,12 @@ try:
     UserID = testValue.testUserID
 
     # 발신번호(동보전송용)
-    Sender = "07043042991"
+    Sender = "07043042992"
 
     # 장문 메시지 제목(동보전송용)
     Subject = "동보전송용 메시지 제목"
 
-    # 장문 메시지 내용, 2000Byte 초과시 길이가 조정되어 전송됨.
+    # 장문 메시지 내용, 길이가 2000Byte 초과시 초과된 메시지 내용은 자동으로 제거됩니다.
     Contents = "동보전송용 메시지 내용"
 
     # 예약전송시간, 공백 처리시 즉시전송(작성형태 yyyyMMddHHmmss)
@@ -51,7 +51,7 @@ try:
     for x in range(0, 100):
         messages.append(
             MessageReceiver(
-                snd='07043042991',  # 발신번호
+                snd='07043042992',  # 발신번호
                 sndnm='발신자명',  # 발신자명
                 rcv='010111222',  # 수신번호
                 rcvnm='수신자명' + str(x),  # 수신자명

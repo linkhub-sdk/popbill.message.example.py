@@ -44,10 +44,10 @@ try:
     Item = ['SMS', 'LMS', 'MMS']
 
     # 예약전송 검색여부, 0-전체조회, 1-예약전송건 조회
-    ReserveYN = '1'
+    ReserveYN = '0'
 
     # 개인조회여부, 0-전체조회, 1-개인조회
-    SenderYN = '1'
+    SenderYN = '0'
 
     # 페이지 번호
     Page = 1
@@ -59,7 +59,7 @@ try:
     Order = "D"
 
     response = messageService.search(CorpNum, SDate, EDate, State, Item, ReserveYN,
-                                     SenderYN, Page, PerPage, Order, "testkorea_20181030")
+                                     SenderYN, Page, PerPage, Order, UserID)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
