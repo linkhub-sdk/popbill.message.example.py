@@ -68,13 +68,22 @@ try:
     print("pageNum (페에지 번호) : %s " % response.pageNum)
     print("pageCount (페이지 개수) : %s \n" % response.pageCount)
 
-    i = 1
     for info in response.list:
-        print("====== 문자전송 정보 [%d] ======" % i)
-        for key, value in info.__dict__.items():
-            print("%s : %s" % (key, value))
-        i += 1
-        print
+        print("subject (메시지 제목) : " + str(info.subject))
+        print("content (메시지 내용) : " + str(info.content))
+        print("sendNum (발신번호) : " + str(info.sendNum))
+        print("receiveNum (수신번호) : " + str(info.receiveNum))
+        print("receiveName (수신자명) : " + str(info.receiveName))
+        print("receiptDT (접수일시) : " + str(info.receiptDT))
+        print("sendDT (발송일시) : " + str(info.sendDT))
+        print("resultDT (전송결과 수신일시) : " + str(info.resultDT))
+        print("reserveDT (예약일시) : " + str(info.reserveDT))
+        print("state (전송 상태코드) : " + str(info.state))
+        print("result (전송 결과코드) : " + str(info.result))
+        print("type (메시지 타입) : " + str(info.type))
+        print("tranNet (전송처리 이동통신사명) : " + str(info.tranNet))
+        print("receiptNum (접수번호) : " + str(info.receiptNum))
+        print("requestNum (요청번호) : " + str(info.requestNum) + '\n')
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

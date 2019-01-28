@@ -32,9 +32,7 @@ try:
     response = messageService.getAutoDenyList(CorpNum, UserID)
 
     for info in response:
-        for key, value in info.__dict__.items():
-            print("%s : %s" % (key, value))
-        print("")
-
+        print("number (수신거부번호) : " + str(info.number))
+        print("regDT (등록일시): " + str(info.regDT) + '\n')
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))
