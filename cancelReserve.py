@@ -27,7 +27,7 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 예약문자전송 접수번호
+    # 예약문자전송시 발급받은 접수번호(receiptNum)
     receiptNum = "019012409000000011"
 
     result = messageService.cancelReserve(CorpNum, receiptNum)

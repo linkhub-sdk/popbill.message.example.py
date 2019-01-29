@@ -27,7 +27,7 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 예약문자전송 요청시 할당한 전송요청번호
+    # 예약문자전송시 할당한 전송요청번호(requestNum)
     requestNum = "20190124-1"
 
     result = messageService.cancelReserveRN(CorpNum, requestNum)
