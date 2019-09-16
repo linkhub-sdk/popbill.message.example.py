@@ -15,6 +15,7 @@ from popbill import MessageService, PopbillException
 
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
+messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 """
 XMS(단문/장문 자동인식)를 전송합니다.

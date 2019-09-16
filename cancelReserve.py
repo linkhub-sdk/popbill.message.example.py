@@ -15,6 +15,7 @@ from popbill import MessageService, PopbillException
 
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
+messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 문자전송요청시 발급받은 접수번호(receiptNum)로 예약문자 전송을 취소합니다.

@@ -15,6 +15,7 @@ from popbill import MessageService, PopbillException
 
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
+messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 파트너의 연동회원으로 가입된 사업자번호인지 확인합니다.

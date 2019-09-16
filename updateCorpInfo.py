@@ -15,6 +15,7 @@ from popbill import CorpInfo, MessageService, PopbillException
 
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
+messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 try:
     print("=" * 15 + " 회사정보 수정 " + "=" * 15)

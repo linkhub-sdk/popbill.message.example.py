@@ -15,6 +15,7 @@ from popbill import JoinForm, MessageService, PopbillException
 
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
+messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 try:
     print("=" * 15 + " 연동회원 가입요청 " + "=" * 15)

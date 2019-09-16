@@ -15,6 +15,7 @@ from popbill import MessageService, PopbillException
 
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
+messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 연동회원의 회사정보를 확인합니다.

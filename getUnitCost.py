@@ -15,6 +15,7 @@ from popbill import MessageService, PopbillException
 
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
+messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 문자메시지 전송단가를 확인합니다.
