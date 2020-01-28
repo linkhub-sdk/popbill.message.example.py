@@ -20,6 +20,7 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 '''
 문자메시지 전송내역 팝업 URL을 반환합니다.
 - 보안정책에 따라 반환된 URL은 30초의 유효시간을 갖습니다.
+- https://docs.popbill.com/message/python/api#GetSentListURL
 '''
 
 try:

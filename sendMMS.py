@@ -19,8 +19,9 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 MMS(포토)를 전송합니다.
- - 메시지 내용이 2,000Byte 초과시 초과된 메시지 내용은 자동으로 제거됩니다.
- - 이미지 파일의 크기는 최대 300Kbtye (JPEG), 가로/세로 1000px 이하 권장
+- 메시지 내용이 2,000Byte 초과시 초과된 메시지 내용은 자동으로 제거됩니다.
+- 이미지 파일의 크기는 최대 300Kbtye (JPEG), 가로/세로 1000px 이하 권장
+- https://docs.popbill.com/message/python/api#SendMMS
 '''
 
 try:

@@ -19,7 +19,8 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 SMS(단문)를 전송합니다.
- - 메시지 내용이 90Byte 초과시 초과된 메시지 내용은 자동으로 제거됩니다.
+- 메시지 내용이 90Byte 초과시 초과된 메시지 내용은 자동으로 제거됩니다.
+- https://docs.popbill.com/message/python/api#SendSMS
 '''
 
 try:

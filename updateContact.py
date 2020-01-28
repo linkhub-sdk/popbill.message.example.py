@@ -17,6 +17,10 @@ messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
+'''
+팝빌 연동회원 사업자의 담당자 정보를 수정합니다.
+- https://docs.popbill.com/message/python/api#UpdateContact
+'''
 try:
     print("=" * 15 + " 담당자 정보 수정 " + "=" * 15)
 

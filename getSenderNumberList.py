@@ -19,6 +19,7 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 팝빌에 등록된 문자 발신번호 목록을 확인합니다.
+- https://docs.popbill.com/message/python/api#GetSenderNumberList
 '''
 
 try:

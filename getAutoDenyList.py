@@ -19,6 +19,7 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 
 '''
 080 서비스 수신거부 목록을 확인합니다.
+- https://docs.popbill.com/message/python/api#GetAutoDenyList
 '''
 
 try:
