@@ -16,6 +16,7 @@ from popbill import MessageService, MessageReceiver, PopbillException
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
+messageService.UseStaticIP = testValue.UseStaticIP
 
 '''
 [대랑전송] MMS(포토)를 전송합니다.

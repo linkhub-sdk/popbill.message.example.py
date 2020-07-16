@@ -16,6 +16,7 @@ from popbill import ContactInfo, MessageService, PopbillException
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
+messageService.UseStaticIP = testValue.UseStaticIP
 
 '''
 연동회원의 담당자를 신규로 등록합니다.

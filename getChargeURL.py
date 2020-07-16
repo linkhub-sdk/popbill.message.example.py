@@ -16,6 +16,7 @@ from popbill import MessageService, PopbillException
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
+messageService.UseStaticIP = testValue.UseStaticIP
 
 '''
 팝빌 연동회원 포인트 충전 URL을 반환합니다.

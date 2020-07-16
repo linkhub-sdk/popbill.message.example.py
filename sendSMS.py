@@ -16,6 +16,7 @@ from popbill import MessageService, PopbillException
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
+messageService.UseStaticIP = testValue.UseStaticIP
 
 '''
 SMS(단문)를 전송합니다.

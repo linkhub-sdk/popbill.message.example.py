@@ -16,6 +16,7 @@ from popbill import CorpInfo, MessageService, PopbillException
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
+messageService.UseStaticIP = testValue.UseStaticIP
 
 '''
 팝빌 연동회원의 회사정보를 수정합니다.
