@@ -17,6 +17,7 @@ messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
+messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 연동회원의 문자 API 서비스 과금정보를 확인합니다.

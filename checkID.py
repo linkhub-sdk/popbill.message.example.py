@@ -17,6 +17,7 @@ messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
+messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 팝빌 회원아이디 중복여부를 확인합니다.

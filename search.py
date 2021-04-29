@@ -17,6 +17,7 @@ messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
+messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 검색조건을 사용하여 문자전송 내역을 조회합니다.
@@ -35,10 +36,10 @@ try:
 
     # 최대 검색기간 : 6개월 이내
     # 시작일자, 날짜형식(yyyyMMdd)
-    SDate = "20190101"
+    SDate = "20210401"
 
     # 종료일자, 날짜형식(yyyyMMdd)
-    EDate = "20190117"
+    EDate = "20210430"
 
     # 전송상태 배열, 1-대기, 2-성공, 3-실패, 4-취소
     State = ['1', '2', '3', '4']
@@ -86,7 +87,7 @@ try:
         print("type (메시지 타입) : %s " % info.type)
         print("tranNet (전송처리 이동통신사명) : %s " % info.tranNet)
         print("receiptNum (접수번호) : %s " % info.receiptNum)
-        print("requestNum (요청번호) : %s " % info.requestNum) + '\n'
+        print("requestNum (요청번호) : %s " % info.requestNum + '\n')
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

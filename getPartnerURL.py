@@ -17,6 +17,7 @@ messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
+messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 파트너 포인트 충전 팝업 URL을 반환합니다.

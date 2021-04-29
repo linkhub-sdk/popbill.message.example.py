@@ -17,6 +17,7 @@ messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
+messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 사업자의 연동회원 가입처리를 요청합니다.

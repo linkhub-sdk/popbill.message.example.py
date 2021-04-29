@@ -17,6 +17,7 @@ messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
 messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
+messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 문자전송요청시 할당한 전송요청번호(requestNum)로 전송상태를 확인합니다.
@@ -30,7 +31,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 문자전송시 할당한 전송요청번호(requestNum)
-    requestNum = '20190117-001'
+    requestNum = '20210420-001'
 
     resultList = messageService.getMessagesRN(CorpNum, requestNum)
 
