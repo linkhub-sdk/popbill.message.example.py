@@ -32,7 +32,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 예약문자전송시 할당한 전송요청번호(requestNum)
-    requestNum = "20190124-1"
+    requestNum = "20211201-1"
 
     result = messageService.cancelReserveRN(CorpNum, requestNum)
 
