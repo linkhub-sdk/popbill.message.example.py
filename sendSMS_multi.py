@@ -22,7 +22,6 @@ messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 '''
 [대량전송] SMS(단문)를 전송합니다.
 - 메시지 내용이 90Byte 초과시 초과된 메시지 내용은 자동으로 제거됩니다.
-- 단건/대량 전송에 대한 설명은 "[문자 API 연동매뉴얼] > 3.2.1 SendSMS(단문전송)"을 참조하시기 바랍니다.
 - https://docs.popbill.com/message/python/api#SendSMS_Multi
 '''
 
