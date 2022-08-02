@@ -100,7 +100,8 @@ try:
         print("type (메시지 타입) : %s " % info.type)
         print("tranNet (전송처리 이동통신사명) : %s " % info.tranNet)
         print("receiptNum (접수번호) : %s " % info.receiptNum)
-        print("requestNum (요청번호) : %s " % info.requestNum + '\n')
+        print("requestNum (요청번호) : %s " % info.requestNum)
+        print("interOPRefKey (파트너 지정키) : %s" % info.interOPRefKey + '\n')
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

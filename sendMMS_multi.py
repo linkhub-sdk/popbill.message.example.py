@@ -56,7 +56,7 @@ try:
 
     # 개별 전송정보 배열 (최대 1000건)
     messages = []
-    for x in range(0, 1000):
+    for x in range(0, 10):
         messages.append(
             MessageReceiver(
                 snd='',  # 발신번호
@@ -64,7 +64,8 @@ try:
                 rcv='',  # 수신번호
                 rcvnm='수신자명' + str(x),  # 수신자명
                 msg='멀티 문자 API TEST',  # msg값이 없는 경우 동보전송용 메시지로 전송됨.
-                sjt='멀티 문자제목'  # 장문 메시지 제목
+                sjt='멀티 문자제목',  # 장문 메시지 제목
+                interOPRefKey='20220803-'+str(x) # 파트너 지정키
             )
         )
 

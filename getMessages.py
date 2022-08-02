@@ -53,6 +53,7 @@ try:
         print("    tranNet (전송처리 이동통신사명) : %s" % f.tranNet)
         print("    receiptNum (접수번호) : %s" % f.receiptNum)
         print("    requestNum (요청번호) : %s" % f.requestNum)
+        print("    interOPRefKey (파트너 지정키) : %s" % f.interOPRefKey)
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

@@ -56,7 +56,8 @@ try:
                 sndnm='발신자명',  # 발신자명
                 rcv='',  # 수신번호
                 rcvnm='수신자명' + str(x),  # 수신자명
-                msg='단문 문자 API TEST'  # 메시지 내용, msg값이 없는경우 동보전송 메시지로 전송됨
+                msg='단문 문자 API TEST',  # 메시지 내용, msg값이 없는경우 동보전송 메시지로 전송됨
+                interOPRefKey='20220803-'+str(x) # 파트너 지정키
             )
         )
 
