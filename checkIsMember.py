@@ -20,7 +20,7 @@ messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-파트너의 연동회원으로 가입된 사업자번호인지 확인합니다.
+사업자번호를 조회하여 연동회원 가입여부를 확인합니다.
 - https://docs.popbill.com/message/python/api#CheckIsMember
 '''
 

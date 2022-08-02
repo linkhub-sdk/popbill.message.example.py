@@ -20,8 +20,7 @@ messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-문자전송요청시 할당한 전송요청번호(requestNum)로 예약문자전송을 취소합니다.
-- 예약취소는 예약전송시간 10분전까지만 가능합니다.
+파트너가 할당한 전송요청 번호를 통해 예약접수된 문자 전송을 취소합니다. (예약시간 10분 전까지 가능)
 - https://docs.popbill.com/message/python/api#CancelReserveRN
 '''
 
@@ -32,7 +31,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 예약문자전송시 할당한 전송요청번호(requestNum)
-    requestNum = "20211201-1"
+    requestNum = ""
 
     result = messageService.cancelReserveRN(CorpNum, requestNum)
 

@@ -36,21 +36,30 @@ try:
 
     # 최대 검색기간 : 6개월 이내
     # 시작일자, 날짜형식(yyyyMMdd)
-    SDate = "20210401"
+    SDate = "20220701"
 
     # 종료일자, 날짜형식(yyyyMMdd)
-    EDate = "20210430"
+    EDate = "20220731"
 
-    # 전송상태 배열, 1-대기, 2-성공, 3-실패, 4-취소
+    # 전송상태 배열 ("1" , "2" , "3" , "4" 중 선택, 다중 선택 가능)
+    # └ 1 = 대기 , 2 = 성공 , 3 = 실패 , 4 = 취소
+    # - 미입력 시 전체조회
     State = ['1', '2', '3', '4']
 
-    # 전송유형, SMS-단문, LMS-장문, MMS-포토
+    # 검색대상 배열 ("SMS" , "LMS" , "MMS" 중 선택, 다중 선택 가능)
+    # └ SMS = 단문 , LMS = 장문 , MMS = 포토문자
+    # - 미입력 시 전체조회
     Item = ['SMS', 'LMS', 'MMS']
 
-    # 예약전송 검색여부, 0-전체조회, 1-예약전송건 조회
+    # 예약여부 (false , true 중 택 1)
+    # └ false = 전체조회, true = 예약전송건 조회
+    # - 미입력시 기본값 false 처리
     ReserveYN = '0'
 
-    # 개인조회여부, 0-전체조회, 1-개인조회
+    # 개인조회 여부 (false , true 중 택 1)
+    # false = 접수한 문자 전체 조회 (관리자권한)
+    # true = 해당 담당자 계정으로 접수한 문자만 조회 (개인권한)
+    # 미입력시 기본값 false 처리
     SenderYN = '0'
 
     # 페이지 번호
@@ -62,8 +71,12 @@ try:
     # 정렬방향, D-내림차순, A-오름차순
     Order = "D"
 
+    # 조회하고자 하는 발신자명 또는 수신자명
+    # - 미입력시 전체조회
+    QString = ""
+
     response = messageService.search(CorpNum, SDate, EDate, State, Item, ReserveYN,
-                                     SenderYN, Page, PerPage, Order, UserID)
+                                     SenderYN, Page, PerPage, Order, UserID, QString)
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)

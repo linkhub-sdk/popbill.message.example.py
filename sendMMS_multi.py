@@ -20,9 +20,9 @@ messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-[대랑전송] MMS(포토)를 전송합니다.
-- 메시지 내용이 2,000Byte 초과시 초과된 메시지 내용은 자동으로 제거됩니다.
-- 이미지 파일의 크기는 최대 300Kbtye (JPEG), 가로/세로 1000px 이하 권장
+최대 2,000byte의 메시지와 이미지로 구성된 포토문자(MMS) 다수건 전송을 팝빌에 접수합니다. (최대 1,000건)
+- 이미지 파일 포맷/규격 : 최대 300Kbyte(JPEG), 가로/세로 1,000px 이하 권장
+- 모든 수신자에게 동일한 내용을 전송하거나(동보전송), 수신자마다 개별 내용을 전송할 수 있습니다(대량전송).
 - https://docs.popbill.com/message/python/api#SendMMS_Multi
 '''
 
@@ -36,7 +36,7 @@ try:
     UserID = testValue.testUserID
 
     # 발신번호(동보전송용)
-    Sender = "07043042992"
+    Sender = ""
 
     # 장문 메시지 제목(동보전송용)
     Subject = "동보전송용 메시지 제목"
@@ -50,7 +50,8 @@ try:
     # 전송할 파일경로 (이미지 파일의 크기는 최대 300Kbyte(JPEG), 가로/세로 1500px 이하 권장)
     filePath = "test.jpeg"
 
-    # 광고문자 전송여부
+    # 광고성 메시지 여부 ( true , false 중 택 1)
+    # └ true = 광고 , false = 일반
     adsYN = False
 
     # 개별 전송정보 배열 (최대 1000건)
@@ -58,9 +59,9 @@ try:
     for x in range(0, 1000):
         messages.append(
             MessageReceiver(
-                snd='07043042992',  # 발신번호
+                snd='',  # 발신번호
                 sndnm='발신자명',  # 발신자명
-                rcv='010111222',  # 수신번호
+                rcv='',  # 수신번호
                 rcvnm='수신자명' + str(x),  # 수신자명
                 msg='멀티 문자 API TEST',  # msg값이 없는 경우 동보전송용 메시지로 전송됨.
                 sjt='멀티 문자제목'  # 장문 메시지 제목

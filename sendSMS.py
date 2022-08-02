@@ -20,8 +20,7 @@ messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-SMS(단문)를 전송합니다.
-- 메시지 내용이 90Byte 초과시 초과된 메시지 내용은 자동으로 제거됩니다.
+최대 90byte의 단문(SMS) 메시지 1건 전송을 팝빌에 접수합니다. (최대 1,000건)
 - https://docs.popbill.com/message/python/api#SendSMS
 '''
 
@@ -35,13 +34,13 @@ try:
     UserID = testValue.testUserID
 
     # 발신번호
-    Sender = "07043042992"
+    Sender = ""
 
     # 발신자명
     SenderName = "발신자명"
 
     # 수신번호
-    ReceiverNum = "010111222"
+    ReceiverNum = ""
 
     # 수신자명
     ReceiverName = "수신자명"
@@ -52,7 +51,8 @@ try:
     # 예약전송시간, 형태 yyyyMMddHHmmss 공백 기재시 즉시전송
     reserveDT = ""
 
-    # 광고문자 전송여부
+    # 광고성 메시지 여부 ( true , false 중 택 1)
+    # └ true = 광고 , false = 일반
     adsYN = True
 
     # 전송요청번호

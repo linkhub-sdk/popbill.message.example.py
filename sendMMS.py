@@ -20,9 +20,8 @@ messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-MMS(포토)를 전송합니다.
-- 메시지 내용이 2,000Byte 초과시 초과된 메시지 내용은 자동으로 제거됩니다.
-- 이미지 파일의 크기는 최대 300Kbtye (JPEG), 가로/세로 1000px 이하 권장
+최대 2,000byte의 메시지와 이미지로 구성된 포토문자(MMS) 1건 전송을 팝빌에 접수합니다. (최대 1,000건)
+- 이미지 파일 포맷/규격 : 최대 300Kbyte(JPEG), 가로/세로 1,000px 이하 권장
 - https://docs.popbill.com/message/python/api#SendMMS
 '''
 
@@ -36,13 +35,13 @@ try:
     UserID = testValue.testUserID
 
     # 발신번호
-    Sender = "07043042992"
+    Sender = ""
 
     # 발신자명
     SenderName = "발신자명"
 
     # 수신번호
-    ReceiverNum = "010111222"
+    ReceiverNum = ""
 
     # 수신자명
     ReceiverName = "수신자명"
@@ -59,7 +58,8 @@ try:
     # 전송할 파일경로 (이미지 파일의 크기는 최대 300Kbyte(JPEG), 가로/세로 1500px 이하 권장)
     FilePath = 'test.jpeg'
 
-    # 광고문자 전송여부
+    # 광고성 메시지 여부 ( true , false 중 택 1)
+    # └ true = 광고 , false = 일반
     adsYN = False
 
     # 전송요청번호

@@ -20,8 +20,8 @@ messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-[대량전송] SMS(단문)를 전송합니다.
-- 메시지 내용이 90Byte 초과시 초과된 메시지 내용은 자동으로 제거됩니다.
+최대 90byte의 단문(SMS) 메시지 다수건 전송을 팝빌에 접수합니다. (최대 1,000건)
+- 모든 수신자에게 동일한 내용을 전송하거나(동보전송), 수신자마다 개별 내용을 전송할 수 있습니다(대량전송).
 - https://docs.popbill.com/message/python/api#SendSMS_Multi
 '''
 
@@ -35,7 +35,7 @@ try:
     UserID = testValue.testUserID
 
     # 발신번호(동보전송용)
-    Sender = "07043042992"
+    Sender = ""
 
     # 단문메시지 내용(동보전송용), 길이가 90Byte 초과시 초과된 메시지 내용은 자동으로 제거됩니다.
     Contents = "동보전송용 메시지 내용"
@@ -43,7 +43,8 @@ try:
     # 예약전송시간, 형태 yyyyMMddHHmmss 공백 기재시 즉시전송
     reserveDT = ""
 
-    # 광고문자 전송여부
+    # 광고성 메시지 여부 ( true , false 중 택 1)
+    # └ true = 광고 , false = 일반
     adsYN = False
 
     # 개별수신정보 배열(최대 10000건)
@@ -51,9 +52,9 @@ try:
     for x in range(0, 10):
         messages.append(
             MessageReceiver(
-                snd='07043042992',  # 발신번호
+                snd='',  # 발신번호
                 sndnm='발신자명',  # 발신자명
-                rcv='010111222',  # 수신번호
+                rcv='',  # 수신번호
                 rcvnm='수신자명' + str(x),  # 수신자명
                 msg='단문 문자 API TEST'  # 메시지 내용, msg값이 없는경우 동보전송 메시지로 전송됨
             )

@@ -20,7 +20,7 @@ messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
-연동회원의 문자 API 서비스 과금정보를 확인합니다.
+문자 API 서비스 과금정보를 확인합니다.
 - https://docs.popbill.com/message/python/api#GetChargeInfo
 '''
 

@@ -21,7 +21,6 @@ messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 문자 전송내역 요약정보를 확인합니다. (최대 1000건)
-- https://docs.popbill.com/message/python/api#GetStates
 '''
 
 try:

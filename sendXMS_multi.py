@@ -20,9 +20,9 @@ messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
-[대량전송] XMS(단문/장문 자동인식)를 전송합니다.
-- 메시지 내용의 길이(90byte)에 따라 SMS/LMS(단문/장문)를 자동인식하여 전송합니다.
-- 90byte 초과시 LMS(장문)으로 인식 합니다.
+메시지 길이(90byte)에 따라 단문/장문(SMS/LMS)을 자동으로 인식하여 다수건의 메시지 전송을 팝빌에 접수합니다. (최대 1,000건)
+- 모든 수신자에게 동일한 내용을 전송하거나(동보전송), 수신자마다 개별 내용을 전송할 수 있습니다(대량전송).
+- 단문(SMS) = 90byte 이하의 메시지, 장문(LMS) = 2000byte 이하의 메시지.
 - https://docs.popbill.com/message/python/api#SendXMS_Multi
 """
 
@@ -36,7 +36,7 @@ try:
     UserID = testValue.testUserID
 
     # 발신번호(동보전송용)
-    Sender = "07043042992"
+    Sender = ""
 
     # 메시지제목(동보전송용)
     Subject = "동보전송용 메시지 제목"
@@ -47,7 +47,8 @@ try:
     # 예약전송시간, 공백 처리시 즉시전송(작성형태 yyyyMMddHHmmss)
     reserveDT = ""
 
-    # 광고문자 전송여부
+    # 광고성 메시지 여부 ( true , false 중 택 1)
+    # └ true = 광고 , false = 일반
     adsYN = False
 
     # 개별 전송정보 배열, 최대 1000건
@@ -55,9 +56,9 @@ try:
     for x in range(0, 10):
         messages.append(
             MessageReceiver(
-                snd='07043042992',  # 발신번호
+                snd='',  # 발신번호
                 sndnm='발신자명',  # 발신자명
-                rcv='010111222',  # 수신번호
+                rcv='',  # 수신번호
                 rcvnm='수신자명' + str(x),  # 수신자명
                 msg='문자 API TEST',  # 90Byte를 기준으로 단/장문을 자동으로 인식하여 전송
                 sjt='장문문자제목'  # 장문메시지 제목
