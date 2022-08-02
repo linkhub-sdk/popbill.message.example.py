@@ -31,7 +31,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 문자전송시 할당한 전송요청번호(requestNum)
-    requestNum = '20210420-001'
+    requestNum = ''
 
     resultList = messageService.getMessagesRN(CorpNum, requestNum)
 

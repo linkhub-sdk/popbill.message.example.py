@@ -31,7 +31,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 문자전송시 발급받은 접수번호(receiptNum)
-    receiptNum = "019012409000000005"
+    receiptNum = "022080218000000005"
 
     resultList = messageService.getMessages(CorpNum, receiptNum)
 
