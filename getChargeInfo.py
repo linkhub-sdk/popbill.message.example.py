@@ -30,13 +30,10 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
     # 문자유형, SMS(단문)/LMS(장문)/MMS(포토)
     MsgType = "SMS"
 
-    response = messageService.getChargeInfo(CorpNum, MsgType, UserID)
+    response = messageService.getChargeInfo(CorpNum, MsgType)
 
     print(" unitCost (전송단가) : %s" % response.unitCost)
     print(" chargeMethod (과금유형) : %s" % response.chargeMethod)

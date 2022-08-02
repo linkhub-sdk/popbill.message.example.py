@@ -29,9 +29,6 @@ try:
     # 팝빌회원 사업자번호
     CorpNum = testValue.testCorpNum
 
-    # 팝빌회원 아이디
-    UserID = testValue.testUserID
-
     # 담당자 정보
     updateInfo = ContactInfo(
 
@@ -51,7 +48,7 @@ try:
         searchRole=1
     )
 
-    result = messageService.updateContact(CorpNum, updateInfo, UserID)
+    result = messageService.updateContact(CorpNum, updateInfo)
 
     print("처리결과 : [%d] %s" % (result.code, result.message))
 except PopbillException as PE:
