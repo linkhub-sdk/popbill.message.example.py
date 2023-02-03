@@ -21,7 +21,7 @@ messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 최대 90byte의 단문(SMS) 메시지 1건 전송을 팝빌에 접수합니다. (최대 1,000건)
-- https://docs.popbill.com/message/python/api#SendSMS
+- https://developers.popbill.com/reference/sms/python/api/send#SendSMSOne
 '''
 
 try:

@@ -21,7 +21,7 @@ messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
 메시지 길이(90byte)에 따라 단문/장문(SMS/LMS)을 자동으로 인식하여 1건의 메시지 전송을 팝빌에 접수합니다. (최대 1,000건)
-- https://docs.popbill.com/message/python/api#SendXMS
+- https://developers.popbill.com/reference/sms/python/api/send#SendXMSOne
 """
 
 try:

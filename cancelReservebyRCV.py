@@ -21,7 +21,7 @@ messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 팝빌에서 반환받은 접수번호와 수신번호를 통해 예약접수된 문자 메시지 전송을 취소합니다. (예약시간 10분 전까지 가능)
-- https://docs.popbill.com/message/python/api#CancelReservebyRCV
+- https://developers.popbill.com/reference/sms/python/api/send#CancelReservebyRCV
 '''
 
 try:

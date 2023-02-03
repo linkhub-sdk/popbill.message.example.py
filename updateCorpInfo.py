@@ -21,7 +21,7 @@ messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 팝빌 연동회원의 회사정보를 수정합니다.
-- https://docs.popbill.com/message/python/api#UpdateCorpInfo
+- https://developers.popbill.com/reference/message/python/api/member#UpdateCorpInfo
 '''
 
 try:

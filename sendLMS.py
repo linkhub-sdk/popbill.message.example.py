@@ -21,7 +21,7 @@ messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 최대 2,000byte의 장문(LMS) 메시지 1건 전송을 팝빌에 접수합니다.
-- https://docs.popbill.com/message/python/api#SendLMS
+- https://developers.popbill.com/reference/sms/python/api/send#SendLMSOne
 '''
 
 try:

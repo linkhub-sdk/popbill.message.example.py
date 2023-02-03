@@ -21,7 +21,7 @@ messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 전용 080 번호에 등록된 수신거부 목록을 반환합니다.
-- https://docs.popbill.com/message/python/api#GetAutoDenyList
+- https://developers.popbill.com/reference/sms/python/api/info#GetAutoDenyList
 '''
 
 try:
