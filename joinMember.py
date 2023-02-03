@@ -21,7 +21,7 @@ messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 사용자를 연동회원으로 가입처리합니다.
-- https://developers.popbill.com/reference/message/python/api/member#JoinMember
+- https://developers.popbill.com/reference/sms/python/api/member#JoinMember
 '''
 
 try:

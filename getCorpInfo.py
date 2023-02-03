@@ -21,7 +21,7 @@ messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 연동회원의 회사정보를 확인합니다.
-- https://developers.popbill.com/reference/message/python/api/member#GetCorpInfo
+- https://developers.popbill.com/reference/sms/python/api/member#GetCorpInfo
 '''
 
 try:

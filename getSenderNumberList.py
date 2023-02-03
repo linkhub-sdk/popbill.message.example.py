@@ -21,7 +21,7 @@ messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 '''
 팝빌에 등록한 연동회원의 문자 발신번호 목록을 확인합니다.
-- https://developers.popbill.com/reference/message/python/api/sendnum#GetSenderNumberList
+- https://developers.popbill.com/reference/sms/python/api/sendnum#GetSenderNumberList
 '''
 
 try:
