@@ -3,7 +3,7 @@
 '''
 팝빌 문자 API Python SDK Example
 
-- Python SDK 연동환경 설정방법 안내 : https://docs.popbill.com/sms/tutorial/python
+- Python SDK 연동환경 설정방법 안내 : https://developers.popbill.com/guide/sms/python/getting-started/tutorial
 - 업데이트 일자 : 2022-10-28
 - 연동 기술지원 연락처 : 1600-9854
 - 연동 기술지원 이메일 : code@linkhubcorp.com
