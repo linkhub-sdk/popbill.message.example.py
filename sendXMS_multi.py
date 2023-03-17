@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -56,13 +56,13 @@ try:
     for x in range(0, 10):
         messages.append(
             MessageReceiver(
-                snd='',  # 발신번호
-                sndnm='발신자명',  # 발신자명
-                rcv='',  # 수신번호
-                rcvnm='수신자명' + str(x),  # 수신자명
-                msg='문자 API TEST',  # 90Byte를 기준으로 단/장문을 자동으로 인식하여 전송
-                sjt='장문문자제목',  # 장문메시지 제목
-                interOPRefKey='20220803-'+str(x) # 파트너 지정키
+                snd="",  # 발신번호
+                sndnm="발신자명",  # 발신자명
+                rcv="",  # 수신번호
+                rcvnm="수신자명" + str(x),  # 수신자명
+                msg="문자 API TEST",  # 90Byte를 기준으로 단/장문을 자동으로 인식하여 전송
+                sjt="장문문자제목",  # 장문메시지 제목
+                interOPRefKey="20220803-" + str(x),  # 파트너 지정키
             )
         )
 
@@ -71,8 +71,17 @@ try:
     # 1~36자리로 구성. 영문, 숫자, 하이픈(-), 언더바(_)를 조합하여 팝빌 회원별로 중복되지 않도록 할당.
     RequestNum = ""
 
-    receiptNum = messageService.sendXMS_multi(CorpNum, Sender, Subject, Contents,
-                                              messages, reserveDT, adsYN, UserID, RequestNum)
+    receiptNum = messageService.sendXMS_multi(
+        CorpNum,
+        Sender,
+        Subject,
+        Contents,
+        messages,
+        reserveDT,
+        adsYN,
+        UserID,
+        RequestNum,
+    )
 
     print("receiptNum : %s" % receiptNum)
 

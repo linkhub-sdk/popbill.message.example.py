@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,11 +19,11 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 최대 2,000byte의 장문(LMS) 메시지 다수건 전송을 팝빌에 접수합니다. (최대 1,000건)
 - 모든 수신자에게 동일한 내용을 전송하거나(동보전송), 수신자마다 개별 내용을 전송할 수 있습니다(대량전송).
 - https://developers.popbill.com/reference/sms/python/api/send#SendLMSAll
-'''
+"""
 
 try:
     print("=" * 15 + " 장문메시지(LMS) 다량(최대1000건) 전송 " + "=" * 15)
@@ -55,13 +55,13 @@ try:
     for x in range(0, 10):
         messages.append(
             MessageReceiver(
-                snd='',  # 발신번호
-                sndnm='발신자명',  # 발신자명
-                rcv='',  # 수신번호
-                rcvnm='수신자명' + str(x),  # 수신자명
-                msg='장문 문자 API TEST',  # msg값이 없는 경우 동보전송용 메시지로 전송됨.
-                sjt='장문문자제목',  # 장문 메시지 제목
-                interOPRefKey='20220803-'+str(x) # 파트너 지정키
+                snd="",  # 발신번호
+                sndnm="발신자명",  # 발신자명
+                rcv="",  # 수신번호
+                rcvnm="수신자명" + str(x),  # 수신자명
+                msg="장문 문자 API TEST",  # msg값이 없는 경우 동보전송용 메시지로 전송됨.
+                sjt="장문문자제목",  # 장문 메시지 제목
+                interOPRefKey="20220803-" + str(x),  # 파트너 지정키
             )
         )
 
@@ -70,8 +70,17 @@ try:
     # 1~36자리로 구성. 영문, 숫자, 하이픈(-), 언더바(_)를 조합하여 팝빌 회원별로 중복되지 않도록 할당.
     RequestNum = ""
 
-    receiptNum = messageService.sendLMS_multi(CorpNum, Sender, Subject, Contents,
-                                              messages, reserveDT, adsYN, UserID, RequestNum)
+    receiptNum = messageService.sendLMS_multi(
+        CorpNum,
+        Sender,
+        Subject,
+        Contents,
+        messages,
+        reserveDT,
+        adsYN,
+        UserID,
+        RequestNum,
+    )
 
     print("receiptNum : %s" % receiptNum)
 

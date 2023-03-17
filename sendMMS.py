@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,11 +19,11 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 최대 2,000byte의 메시지와 이미지로 구성된 포토문자(MMS) 1건 전송을 팝빌에 접수합니다. (최대 1,000건)
 - 이미지 파일 포맷/규격 : 최대 300Kbyte(JPEG), 가로/세로 1,000px 이하 권장
 - https://developers.popbill.com/reference/sms/python/api/send#SendMMSOne
-'''
+"""
 
 try:
     print("=" * 15 + " 멀티메시지(MMS) 1건 전송 " + "=" * 15)
@@ -56,7 +56,7 @@ try:
     reserveDT = ""
 
     # 전송할 파일경로 (이미지 파일의 크기는 최대 300Kbyte(JPEG), 가로/세로 1500px 이하 권장)
-    FilePath = 'test.jpeg'
+    FilePath = "test.jpeg"
 
     # 광고성 메시지 여부 ( true , false 중 택 1)
     # └ true = 광고 , false = 일반
@@ -67,8 +67,20 @@ try:
     # 1~36자리로 구성. 영문, 숫자, 하이픈(-), 언더바(_)를 조합하여 팝빌 회원별로 중복되지 않도록 할당.
     RequestNum = ""
 
-    receiptNum = messageService.sendMMS(CorpNum, Sender, ReceiverNum, ReceiverName,
-                                        Subject, Contents, FilePath, reserveDT, adsYN, UserID, SenderName, RequestNum)
+    receiptNum = messageService.sendMMS(
+        CorpNum,
+        Sender,
+        ReceiverNum,
+        ReceiverName,
+        Subject,
+        Contents,
+        FilePath,
+        reserveDT,
+        adsYN,
+        UserID,
+        SenderName,
+        RequestNum,
+    )
 
     print("receiptNum : %s" % receiptNum)
 

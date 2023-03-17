@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 팝빌에 등록한 연동회원의 문자 발신번호 목록을 확인합니다.
 - https://developers.popbill.com/reference/sms/python/api/sendnum#GetSenderNumberList
-'''
+"""
 
 try:
     print("=" * 15 + " 문자 발신번호 목록 확인 " + "=" * 15)

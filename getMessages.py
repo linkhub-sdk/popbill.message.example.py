@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 팝빌에서 반환받은 접수번호를 통해 문자 전송상태 및 결과를 확인합니다.
 - https://developers.popbill.com/reference/sms/python/api/info#GetMessages
-'''
+"""
 
 try:
     print("=" * 15 + " 문자전송 전송결과 확인 " + "=" * 15)

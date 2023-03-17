@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 사업자번호를 조회하여 연동회원 가입여부를 확인합니다.
 - https://developers.popbill.com/reference/sms/python/api/member#CheckIsMember
-'''
+"""
 
 try:
     print("=" * 15 + " 연동회원 가입여부 확인 " + "=" * 15)

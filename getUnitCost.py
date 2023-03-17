@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 문자 전송시 과금되는 포인트 단가를 확인합니다.
 - https://developers.popbill.com/reference/sms/python/api/point#GetUnitCost
-'''
+"""
 
 try:
     print("=" * 15 + " 문자메시지 전송단가 확인 " + "=" * 15)

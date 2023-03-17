@@ -5,13 +5,13 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
 import testValue
 
-from popbill import MessageService, PopbillException, RefundForm
+from popbill import MessageService, PopbillException
 
 messageService = MessageService(testValue.LinkID, testValue.SecretKey)
 messageService.IsTest = testValue.IsTest
@@ -19,10 +19,10 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 팝빌회원에 등록된 080 수신거부 번호 정보를 확인합니다.
 - https://developers.popbill.com/reference/sms/python/api/info#CheckAutoDenyNumber
-'''
+"""
 
 try:
     print("=" * 15 + " 환불 신청 " + "=" * 15)
@@ -31,7 +31,7 @@ try:
     CorpNum = testValue.testCorpNum
 
     # 팝빌회원 팝빌 아이디
-    UserID = testValue.UserID
+    UserID = testValue.testUserID
 
     autoDenyNumberInfo = messageService.checkAutoDenyNumber(CorpNum, UserID)
 

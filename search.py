@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,11 +19,11 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 검색조건을 사용하여 문자전송 내역을 조회합니다. (조회기간 단위 : 최대 2개월)
 - 문자 접수일시로부터 6개월 이내 접수건만 조회할 수 있습니다.
 - https://developers.popbill.com/reference/sms/python/api/info#Search
-'''
+"""
 
 try:
     print("=" * 15 + " 문자전송 목록 조회 " + "=" * 15)
@@ -44,23 +44,23 @@ try:
     # 전송상태 배열 ("1" , "2" , "3" , "4" 중 선택, 다중 선택 가능)
     # └ 1 = 대기 , 2 = 성공 , 3 = 실패 , 4 = 취소
     # - 미입력 시 전체조회
-    State = ['1', '2', '3', '4']
+    State = ["1", "2", "3", "4"]
 
     # 검색대상 배열 ("SMS" , "LMS" , "MMS" 중 선택, 다중 선택 가능)
     # └ SMS = 단문 , LMS = 장문 , MMS = 포토문자
     # - 미입력 시 전체조회
-    Item = ['SMS', 'LMS', 'MMS']
+    Item = ["SMS", "LMS", "MMS"]
 
     # 예약여부 (false , true 중 택 1)
     # └ false = 전체조회, true = 예약전송건 조회
     # - 미입력시 기본값 false 처리
-    ReserveYN = '0'
+    ReserveYN = "0"
 
     # 개인조회 여부 (false , true 중 택 1)
     # false = 접수한 문자 전체 조회 (관리자권한)
     # true = 해당 담당자 계정으로 접수한 문자만 조회 (개인권한)
     # 미입력시 기본값 false 처리
-    SenderYN = '0'
+    SenderYN = "0"
 
     # 페이지 번호
     Page = 1
@@ -75,8 +75,20 @@ try:
     # - 미입력시 전체조회
     QString = ""
 
-    response = messageService.search(CorpNum, SDate, EDate, State, Item, ReserveYN,
-                                     SenderYN, Page, PerPage, Order, UserID, QString)
+    response = messageService.search(
+        CorpNum,
+        SDate,
+        EDate,
+        State,
+        Item,
+        ReserveYN,
+        SenderYN,
+        Page,
+        PerPage,
+        Order,
+        UserID,
+        QString,
+    )
 
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
@@ -101,7 +113,7 @@ try:
         print("tranNet (전송처리 이동통신사명) : %s " % info.tranNet)
         print("receiptNum (접수번호) : %s " % info.receiptNum)
         print("requestNum (요청번호) : %s " % info.requestNum)
-        print("interOPRefKey (파트너 지정키) : %s" % info.interOPRefKey + '\n')
+        print("interOPRefKey (파트너 지정키) : %s" % info.interOPRefKey + "\n")
 
 except PopbillException as PE:
     print("Exception Occur : [%d] %s" % (PE.code, PE.message))

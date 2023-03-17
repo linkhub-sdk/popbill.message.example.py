@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 최대 2,000byte의 장문(LMS) 메시지 1건 전송을 팝빌에 접수합니다.
 - https://developers.popbill.com/reference/sms/python/api/send#SendLMSOne
-'''
+"""
 
 try:
     print("=" * 15 + " 장문메시지(LMS) 1건 전송 " + "=" * 15)
@@ -63,8 +63,19 @@ try:
     # 1~36자리로 구성. 영문, 숫자, 하이픈(-), 언더바(_)를 조합하여 팝빌 회원별로 중복되지 않도록 할당.
     RequestNum = ""
 
-    receiptNum = messageService.sendLMS(CorpNum, Sender, ReceiverNum, ReceiverName,
-                                        Subject, Contents, reserveDT, adsYN, UserID, SenderName, RequestNum)
+    receiptNum = messageService.sendLMS(
+        CorpNum,
+        Sender,
+        ReceiverNum,
+        ReceiverName,
+        Subject,
+        Contents,
+        reserveDT,
+        adsYN,
+        UserID,
+        SenderName,
+        RequestNum,
+    )
 
     print("receiptNum : %s" % receiptNum)
 

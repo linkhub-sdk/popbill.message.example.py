@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 연동회원 포인트를 환불 신청합니다.
 - https://developers.popbill.com/reference/sms/python/api/point#Refund
-'''
+"""
 
 try:
     print("=" * 15 + " 환불 신청 " + "=" * 15)

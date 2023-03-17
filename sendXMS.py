@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -63,8 +63,19 @@ try:
     # 1~36자리로 구성. 영문, 숫자, 하이픈(-), 언더바(_)를 조합하여 팝빌 회원별로 중복되지 않도록 할당.
     RequestNum = ""
 
-    receiptNum = messageService.sendXMS(CorpNum, Sender, ReceiverNum, ReceiverName,
-                                        Subject, Contents, reserveDT, adsYN, UserID, SenderName, RequestNum)
+    receiptNum = messageService.sendXMS(
+        CorpNum,
+        Sender,
+        ReceiverNum,
+        ReceiverName,
+        Subject,
+        Contents,
+        reserveDT,
+        adsYN,
+        UserID,
+        SenderName,
+        RequestNum,
+    )
 
     print("receiptNum : %s" % receiptNum)
 

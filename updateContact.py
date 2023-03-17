@@ -5,7 +5,7 @@ import imp
 
 imp.reload(sys)
 try:
-    sys.setdefaultencoding('UTF8')
+    sys.setdefaultencoding("UTF8")
 except Exception as E:
     pass
 
@@ -19,10 +19,10 @@ messageService.IPRestrictOnOff = testValue.IPRestrictOnOff
 messageService.UseStaticIP = testValue.UseStaticIP
 messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
-'''
+"""
 팝빌 연동회원 사업자의 담당자 정보를 수정합니다.
 - https://developers.popbill.com/reference/sms/python/api/member#UpdateContact
-'''
+"""
 try:
     print("=" * 15 + " 담당자 정보 수정 " + "=" * 15)
 
@@ -34,21 +34,16 @@ try:
 
     # 담당자 정보
     updateInfo = ContactInfo(
-
         # 담당자 아이디
         id=UserID,
-
         # 담당자 성명 (최대 100자)
         personName="담당자 성명",
-
         # 연락처 (최대 20자)
         tel="",
-
         # 메일주소 (최대 100자)
         email="",
-
-        #담당자 조회권한, 1(개인) 2(읽기) 3(회사)
-        searchRole=1
+        # 담당자 조회권한, 1(개인) 2(읽기) 3(회사)
+        searchRole=1,
     )
 
     result = messageService.updateContact(CorpNum, updateInfo)
