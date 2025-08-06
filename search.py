@@ -35,10 +35,10 @@ try:
 
     # 최대 검색기간 : 6개월 이내
     # 시작일자, 날짜형식(yyyyMMdd)
-    SDate = "20241201"
+    SDate = "20250801"
 
     # 종료일자, 날짜형식(yyyyMMdd)
-    EDate = "20241231"
+    EDate = "20250831"
 
     # 전송상태 배열 ("1" , "2" , "3" , "4" 중 선택, 다중 선택 가능)
     # └ 1 = 대기 , 2 = 성공 , 3 = 실패 , 4 = 취소
@@ -92,7 +92,7 @@ try:
     print("code (응답코드) : %s " % response.code)
     print("message (응답메시지) : %s " % response.message)
     print("total (검색결과 건수) : %s " % response.total)
-    print("perPage (페이지당 검색개수) : %s " % response.perPage)
+    print("perPage (페이지당 목록 건수) : %s " % response.perPage)
     print("pageNum (페이지 번호) : %s " % response.pageNum)
     print("pageCount (페이지 개수) : %s \n" % response.pageCount)
 
@@ -100,14 +100,15 @@ try:
         print("subject (메시지 제목) : %s " % info.subject)
         print("content (메시지 내용) : %s " % info.content)
         print("sendNum (발신번호) : %s " % info.sendNum)
+        print("senderName (발신자명) : %s " % info.senderName)
         print("receiveNum (수신번호) : %s " % info.receiveNum)
         print("receiveName (수신자명) : %s " % info.receiveName)
         print("receiptDT (접수일시) : %s " % info.receiptDT)
-        print("sendDT (발송일시) : %s " % info.sendDT)
+        print("sendDT (전송일시) : %s " % info.sendDT)
         print("resultDT (전송결과 수신일시) : %s " % info.resultDT)
         print("reserveDT (예약일시) : %s " % info.reserveDT)
-        print("state (전송 상태코드) : %s " % info.state)
-        print("result (전송 결과코드) : %s " % info.result)
+        print("state (상태코드) : %s " % info.state)
+        print("result (결과코드) : %s " % info.result)
         print("type (메시지 타입) : %s " % info.type)
         print("tranNet (전송처리 이동통신사명) : %s " % info.tranNet)
         print("receiptNum (접수번호) : %s " % info.receiptNum)

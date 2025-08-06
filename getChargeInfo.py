@@ -20,7 +20,7 @@ messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
 문자 API 서비스 과금정보를 확인합니다.
-- https://developers.popbill.com/reference/sms/python/api/point#GetChargeInfo
+- https://developers.popbill.com/reference/sms/python/common-api/point#GetChargeInfo
 """
 
 try:

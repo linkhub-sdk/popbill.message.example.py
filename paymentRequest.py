@@ -20,7 +20,7 @@ messageService.UseLocalTimeYN = testValue.UseLocalTimeYN
 
 """
 연동회원 포인트 충전을 위해 무통장입금을 신청합니다.
-- https://developers.popbill.com/reference/sms/python/api/point#PaymentRequest
+- https://developers.popbill.com/reference/sms/python/common-api/point#PaymentRequest
 """
 
 try:
@@ -31,6 +31,7 @@ try:
 
     # 입금신청 객체정보
     paymentForm = PaymentForm(
+
         # 담당자명
         settlerName="담당자",
 

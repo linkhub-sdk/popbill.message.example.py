@@ -36,9 +36,6 @@ try:
 
     for index, f in enumerate(resultList):
         print("%d:" % index)
-        print("    state (전송상태 코드) : %s" % f.state)
-        print("    result (전송결과 코드) : %s" % f.result)
-        print("    type (메시지유형) : %s" % f.type)
         print("    subject (메시지 제목) : %s" % f.subject)
         print("    content (메시지 내용) : %s" % f.content)
         print("    sendNum (발신번호) : %s" % f.sendNum)
@@ -49,6 +46,9 @@ try:
         print("    reserveDT (예약일시) : %s" % f.reserveDT)
         print("    sendDT (전송일시) : %s" % f.sendDT)
         print("    resultDT (전송결과 수신일시) : %s" % f.resultDT)
+        print("    state (상태코드) : %s" % f.state)
+        print("    result (결과코드) : %s" % f.result)
+        print("    type (메시지 타입) : %s" % f.type)
         print("    tranNet (전송처리 이동통신사명) : %s" % f.tranNet)
         print("    receiptNum (접수번호) : %s" % f.receiptNum)
         print("    requestNum (요청번호) : %s" % f.requestNum)
